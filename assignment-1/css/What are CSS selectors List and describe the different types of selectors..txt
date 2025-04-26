@@ -1,0 +1,30 @@
+CSS Selectors:
+    CSS selectors are patterns used to select and style HTML elements on a web page. 
+    They are a fundamental part of CSS (Cascading Style Sheets) 
+    that determine which elements the styling rules will apply to.
+
+Types of CSS Selectors
+
+Basic Selectors
+    a)Universal Selector (*)
+        Selects all elements on the page
+        Example: * { margin: 0; } (removes margin from all elements)
+    
+    b)Type Selector (Element Selector)
+        Selects all elements of a given type
+        Example: p { color: blue; } (styles all paragraph elements)
+    
+    c)Class Selector (.class)
+        Selects elements with a specific class attribute
+        Example: .warning { color: red; } (styles all elements with class="warning")
+    
+    d)ID Selector (#id)
+        Selects a single element with a specific id attribute
+        Example: #header { background: gray; } (styles element with id="header")
+    
+    e)Attribute Selector ([attribute])
+        Selects elements based on attributes or attribute values
+        Examples:
+            [target] (elements with target attribute)
+            [type="text"] (elements with type="text")
+            [href^="https"] (elements with href starting with "https")

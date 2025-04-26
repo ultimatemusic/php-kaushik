@@ -1,0 +1,6 @@
+1:Describe the purpose of HTML tags.
+    HTML tags are the foundation of web page structure
+    acting as instructions to browsers on how to display content. 
+    They define elements like headings, paragraphs, and images, providing organization and meaning to web pages. 
+    Essentially, they tell the browser what something is, and how it should be presented visually. 
+
