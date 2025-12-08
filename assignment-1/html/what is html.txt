@@ -1,0 +1,27 @@
+1: what is html:
+	HTML, or HyperText Markup Language
+	is the foundational language for web pages. 
+	It uses elements, tags, and attributes to structure content 
+	defining how text, images, links, and other elements are displayed in a web browser. 
+2:basic structure of html:
+	The basic structure includes a DOCTYPE declaration
+	an <html> root element containing a 
+		<head> for metadata and a 
+		<body> for the visible content.
+
+example:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+</body>
+</html>

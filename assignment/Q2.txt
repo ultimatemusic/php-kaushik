@@ -1,0 +1,95 @@
+2.What is Eloquent ORM in Laravel?
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ANS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>...>>>>>>>>>>>>>>>>>>>>>>>>
+
+Eloquent ORM (Object-Relational Mapping) is Laravel’s built-in tool that allows you to interact 
+with the database using PHP syntax instead of writing raw SQL queries. Each table corresponds to 
+a Model, and you can perform operations such as retrieving, inserting, updating, and deleting records easily.
+
+Benefits:
+
+1.Clean, readable syntax.
+
+2.Handles relationships between tables (one-to-one, one-to-many, many-to-many).
+
+3.Automatically manages timestamps and other common tasks.
+
+4.Provides built-in functions for validation and querying.
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::Example Model:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+php artisan make:model Product
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+    protected $fillable = ['name', 'price'];
+}
+
+This model will interact with the products table by default.
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Example of CRUD Operations with Eloquent ORM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..
+
+
+➤ Create
+
+use App\Models\Product;
+
+$product = Product::create([
+    'name' => 'Laptop',
+    'price' => 1200.00
+]);
+
+
+➤ Read
+
+// Get all products
+$products = Product::all();
+
+// Get a single product by ID
+$product = Product::find(1);
+
+
+➤ Update
+
+$product = Product::find(1);
+$product->name = 'Gaming Laptop';
+$product->price = 1500.00;
+$product->save();
+
+
+➤ Delete
+
+$product = Product::find(1);
+$product->delete();
+
+
+
+
+Conclusion
+
+Database Migrations in Laravel help you structure and 
+version your database easily and consistently.
+
+Eloquent ORM simplifies database interactions by providing 
+an expressive syntax and methods for performing CRUD operations.
+
+Together, they make Laravel a powerful framework for building scalable 
+and maintainable web applications.
+
+This combination ensures that both development and collaboration are efficient, 
+error-free, and traceable.
+
+
+
+
+
+
+

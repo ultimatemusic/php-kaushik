@@ -1,0 +1,231 @@
+ Create multiple tables and perform queries using:
+o SELECT, UPDATE, DELETE, INSERT
+o WHERE, LIKE, GROUP BY, HAVING
+o LIMIT, OFFSET, Subqueries, AND, OR, NOT, IN
+
+
+
+--------CREATE TABLE------
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    registration_date DATE
+);
+
+-- Create products table
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10,2),
+    stock_quantity INT
+);
+
+
+
+
+1
+--------------INSERT---------
+
+-- Insert data into customers
+INSERT INTO customers VALUES
+(1, 'John', 'Doe', 'john.doe@email.com', '555-1234', '2023-01-15'),
+(2, 'Jane', 'Smith', 'jane.smith@email.com', '555-5678', '2023-02-20'),
+(3, 'Robert', 'Johnson', 'robert.j@email.com', '555-9012', '2023-03-10'),
+(4, 'Emily', 'Davis', 'emily.d@email.com', '555-3456', '2023-04-05');
+
+-- Insert data into products
+INSERT INTO products VALUES
+(101, 'Laptop', 'Electronics', 999.99, 50),
+(102, 'Smartphone', 'Electronics', 699.99, 100),
+(103, 'Desk Chair', 'Furniture', 149.99, 30),
+(104, 'Coffee Maker', 'Appliances', 79.99, 75),
+(105, 'Headphones', 'Electronics', 129.99, 200);
+
+
+
+
+---------------------------------------------------------------
+UPDATE
+
+
+-- Update a customer's email address
+UPDATE customers
+SET email = 'john.doe.new@email.com'
+WHERE customer_id = 1;
+
+-- Verify the update
+SELECT customer_id, first_name, email FROM customers WHERE customer_id = 1;
+
+----------------------------------------------------------
+
+DELETE
+
+-- Delete a specific order
+DELETE FROM orders
+WHERE order_id = 1006;
+
+-- Verify deletion
+SELECT * FROM orders WHERE order_id = 1006;
+
+----------------------------------------------------------
+
+-----------------SELECT-----------------
+
+-- Select all columns from customers
+SELECT * FROM customers;
+
+-- Select specific columns
+SELECT first_name, last_name, email FROM customers;
+
+
+
+
+
+
+
+
+
+
+---------WHERE, LIKE, GROUP BY, HAVING--------------
+
+
+-----------------------------------------------------------------------
+
+SELECT with WHERE clause
+
+
+-- Find all electronics products
+SELECT * FROM products WHERE category = 'Electronics';
+
+-- Find orders over $500
+SELECT * FROM orders WHERE total_amount > 500;
+-----------------------------------------------------------------------
+
+SELECT with LIKE on products
+
+-- Find customers with first names starting with 'J'
+SELECT customer_id, first_name, last_name
+FROM customers
+WHERE first_name LIKE 'J%';
+
+-----------------------------------------------------------------------
+GROUP BY
+
+-- Count products by category
+SELECT 
+    category,
+    COUNT(*) AS product_count
+FROM products
+GROUP BY category;
+
+-----------------------------------------------------------------------
+HAVING BY
+
+
+-- Find product categories with more than 1 product
+SELECT 
+    category,
+    COUNT(*) AS product_count
+FROM products
+GROUP BY category
+HAVING COUNT(*) > 1;
+
+
+
+
+
+
+
+
+
+
+
+---------------------LIMIT, OFFSET, Subqueries, AND, OR, NOT, IN--------------------------
+
+
+
+
+
+SELECT with LIMIT on products
+
+
+-- Get the 2 most expensive products
+SELECT product_name, price
+FROM products
+ORDER BY price DESC
+LIMIT 2;
+
+
+------------------------------
+
+OFFSET
+
+
+
+-- Get the second page of customers (rows 3-4)
+SELECT customer_id, first_name, last_name
+FROM customers
+ORDER BY customer_id
+LIMIT 2 OFFSET 2;
+
+
+------------------------------
+
+Subqueries
+
+
+-- Find customers who placed orders
+SELECT first_name, last_name, email
+FROM customers
+WHERE customer_id IN (
+    SELECT DISTINCT customer_id 
+    FROM orders
+);
+
+----------------------------
+
+
+AND
+
+
+-- Find electronics products under $200
+SELECT product_id, product_name, price
+FROM products
+WHERE category = 'Electronics' AND price < 200;
+
+
+-------------------------------
+
+
+OR
+
+
+-- Find products that are either Electronics or Appliances
+SELECT product_id, product_name, category
+FROM products
+WHERE category = 'Electronics' OR category = 'Appliances';
+
+
+
+------------------------------
+
+NOT
+
+-- Find products that are NOT in the Electronics category
+SELECT product_id, product_name, category
+FROM products
+WHERE NOT category = 'Electronics';
+
+
+-------------------------------
+
+IN
+
+-- Find products in specific categories
+SELECT product_id, product_name, category
+FROM products
+WHERE category IN ('Electronics', 'Furniture');

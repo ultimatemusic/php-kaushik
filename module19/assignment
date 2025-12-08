@@ -1,0 +1,374 @@
+
+1:
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
+class UserController extends Controller
+{
+    /**
+     * Show a list of all of the application's users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = DB::table('users')->get();
+
+        return view('user.index', ['users' => $users]);
+    }
+}
+
+
+
+2:
+
+use Illuminate\Support\Facades\DB;
+
+$users = DB::table('users')->get();
+
+foreach ($users as $user) {
+    echo $user->name;
+}
+
+
+3:
+
+$user = DB::table('users')->where('name', 'John')->first();
+
+return $user->email;
+
+
+4:
+
+$email = DB::table('users')->where('name', 'John')->value('email');
+
+
+5:
+
+$user = DB::table('users')->find(3);
+use Illuminate\Support\Facades\DB;
+$titles = DB::table('users')->pluck('title');
+foreach ($titles as $title) {
+
+    echo $title;
+
+}
+
+
+6:
+$titles = DB::table('users')->pluck('title', 'name');
+foreach ($titles as $name => $title) {
+
+    echo $title;
+
+}
+
+7:
+use Illuminate\Support\Facades\DB;
+DB::table('users')->orderBy('id')->chunk(100, function ($users) {
+
+    foreach ($users as $user) {
+
+        //
+
+    }
+
+});
+
+
+8:
+DB::table('users')->orderBy('id')->chunk(100, function ($users) {
+
+    // Process the records...
+
+ 
+
+    return false;
+
+});
+
+
+9:
+DB::table('users')->where('active', false)
+
+    ->chunkById(100, function ($users) {
+
+        foreach ($users as $user) {
+
+            DB::table('users')
+
+                ->where('id', $user->id)
+
+                ->update(['active' => true]);
+
+        }
+
+    });
+
+
+10:
+use Illuminate\Support\Facades\DB;
+
+ 
+
+DB::table('users')->orderBy('id')->lazy()->each(function ($user) {
+
+    //
+
+});
+
+
+11:
+DB::table('users')->where('active', false)
+
+    ->lazyById()->each(function ($user) {
+
+        DB::table('users')
+
+            ->where('id', $user->id)
+
+            ->update(['active' => true]);
+
+    });
+
+
+12:
+use Illuminate\Support\Facades\DB;
+
+ 
+
+$users = DB::table('users')->count();
+
+ 
+
+$price = DB::table('orders')->max('price');
+
+
+
+13:
+$price = DB::table('orders')
+
+                ->where('finalized', 1)
+
+                ->avg('price');
+14:
+
+if (DB::table('orders')->where('finalized', 1)->exists()) {
+
+    // ...
+
+}
+
+ 
+
+if (DB::table('orders')->where('finalized', 1)->doesntExist()) {
+
+    // ...
+
+}
+
+
+15:
+use Illuminate\Support\Facades\DB;
+
+ 
+
+$users = DB::table('users')
+
+            ->select('name', 'email as user_email')
+
+            ->get();
+
+
+16:
+$users = DB::table('users')->distinct()->get();
+
+
+17:
+$query = DB::table('users')->select('name');
+
+ 
+
+$users = $query->addSelect('age')->get();
+
+
+18:
+
+$users = DB::table('users')
+
+             ->select(DB::raw('count(*) as user_count, status'))
+
+             ->where('status', '<>', 1)
+
+             ->groupBy('status')
+
+             ->get();
+
+
+19:
+$orders = DB::table('orders')
+
+                ->selectRaw('price * ? as price_with_tax', [1.0825])
+
+                ->get();
+
+
+20:
+$orders = DB::table('orders')
+
+                ->whereRaw('price > IF(state = "TX", ?, 100)', [200])
+
+                ->get();
+
+
+21:
+$orders = DB::table('orders')
+
+                ->select('department', DB::raw('SUM(price) as total_sales'))
+
+                ->groupBy('department')
+
+                ->havingRaw('SUM(price) > ?', [2500])
+
+                ->get();
+
+orderByRaw
+
+The orderByRaw method may be used to provide a raw string as the value of the "order by" clause:
+
+$orders = DB::table('orders')
+
+                ->orderByRaw('updated_at - created_at DESC')
+
+                ->get();
+
+groupByRaw
+
+The groupByRaw method may be used to provide a raw string as the value of the group by clause:
+
+$orders = DB::table('orders')
+
+                ->select('city', 'state')
+
+                ->groupByRaw('city, state')
+
+                ->get();
+
+22:
+use Illuminate\Support\Facades\DB;
+
+ 
+
+$users = DB::table('users')
+
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+
+            ->select('users.*', 'contacts.phone', 'orders.price')
+
+            ->get();
+
+Left Join / Right Join Clause
+
+
+23:
+
+$users = DB::table('users')
+
+            ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
+
+            ->get();
+
+ 
+
+$users = DB::table('users')
+
+            ->rightJoin('posts', 'users.id', '=', 'posts.user_id')
+
+            ->get();
+
+Cross Join Clause
+
+
+24:
+$sizes = DB::table('sizes')
+
+            ->crossJoin('colors')
+
+            ->get();
+
+Advanced Join Clauses
+
+
+25:
+
+DB::table('users')
+
+        ->join('contacts', function ($join) {
+
+            $join->on('users.id', '=', 'contacts.user_id')->orOn(/* ... */);
+
+        })
+
+        ->get();
+
+26:
+DB::table('users')
+
+        ->join('contacts', function ($join) {
+
+            $join->on('users.id', '=', 'contacts.user_id')
+
+                 ->where('contacts.user_id', '>', 5);
+
+        })
+
+        ->get();
+
+
+27:
+$latestPosts = DB::table('posts')
+
+                   ->select('user_id', DB::raw('MAX(created_at) as last_post_created_at'))
+
+                   ->where('is_published', true)
+
+                   ->groupBy('user_id');
+
+ 
+
+$users = DB::table('users')
+
+        ->joinSub($latestPosts, 'latest_posts', function ($join) {
+
+            $join->on('users.id', '=', 'latest_posts.user_id');
+
+        })->get();
+
+Unions
+
+
+28:
+use Illuminate\Support\Facades\DB;
+
+ 
+
+$first = DB::table('users')
+
+            ->whereNull('first_name');
+
+ 
+
+$users = DB::table('users')
+
+            ->whereNull('last_name')
+
+            ->union($first)
+
+            ->get();

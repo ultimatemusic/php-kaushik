@@ -1,0 +1,246 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<?php
+    require_once('links.php');
+?>
+<body>
+
+
+<!-- Main Wrapper Start -->
+<div id="main-wrapper" class="section">
+   
+   
+
+
+    <!-- Header Section Start -->
+    <div class="header-section section">
+       
+        <!-- Header Top Start -->
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <!-- Header Top Wrapper Start -->
+                        <div class="header-top-wrapper">
+                            <div class="row">
+
+                                <!-- Header Social -->
+                                <div class="header-social col-md-4 col-12">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                </div>
+
+                                <!-- Header Logo -->
+                                <div class="header-logo col-md-4 col-12">
+                                    <a href="index.html" class="logo"><img src="img/logo.png" alt="logo"></a>
+                                </div>
+
+                                <!-- Account Menu -->
+                                <div class="account-menu col-md-4 col-12">
+                                    <ul>
+                                        <li><a href="#">My Account</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                        <li><a href="#" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i><span class="num">2</span></a>
+                                            
+                                            <!-- Mini Cart -->
+                                            <div class="mini-cart-brief dropdown-menu text-left">
+                                                <!-- Cart Products -->
+                                                <div class="all-cart-product clearfix">
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-image">
+                                                            <a href="product-details.html"><img src="img/cart/1.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="product-details.html">Holiday Candle</a></h5>
+                                                            <p>1 x £9.00</p>
+                                                            <a href="#" class="cart-delete" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart clearfix">
+                                                        <div class="cart-image">
+                                                            <a href="product-details.html"><img src="img/cart/2.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-info">
+                                                            <h5><a href="product-details.html">Christmas Tree</a></h5>
+                                                            <p>1 x £9.00</p>
+                                                            <a href="#" class="cart-delete" title="Remove this item"><i class="fa fa-trash-o"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Cart Total -->
+                                                <div class="cart-totals">
+                                                    <h5>Total <span>£12.00</span></h5>
+                                                </div>
+                                                <!-- Cart Button -->
+                                                <div class="cart-bottom  clearfix">
+                                                    <a href="checkout.html">Check out</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div><!-- Header Top Wrapper End -->
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- Header Top End -->
+        
+        <!-- Header Bottom Start -->
+        <div class="header-bottom section">
+            <div class="container">
+                <div class="row">
+                   
+                    <!-- Header Bottom Wrapper Start -->
+                    <div class="header-bottom-wrapper text-center col">
+
+                        <!-- Header Bottom Logo -->
+                        <div class="header-bottom-logo">
+                            <a href="index.html" class="logo"><img src="img/logo.png" alt="logo"></a>
+                        </div>
+
+                        <!-- Main Menu -->
+                        <nav id="main-menu" class="main-menu">
+                            <ul>
+                                <li><a href="index.html">home</a></li>
+                                <li><a href="shop.html">shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">shop page</a></li>
+                                        <li><a href="product-details.html">product details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="#">pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="cart.html">cart</a></li>
+                                        <li><a href="checkout.html">checkout</a></li>
+                                        <li><a href="wishlist.html">wishlist</a></li>
+										<li><a href="under-construction.html">Under Construction</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">blog page</a></li>
+                                        <li><a href="blog-details.html">blog details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active"><a href="contact.html">contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- Header Search -->
+                        <div class="header-search">
+                            
+                            <!-- Search Toggle -->
+                            <button class="search-toggle"><i class="ion-ios-search-strong"></i></button>
+                            
+                            <!-- Search Form -->
+                            <div class="header-search-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Search...">
+                                    <button><i class="ion-ios-search-strong"></i></button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu section d-md-none"></div>
+
+                    </div><!-- Header Bottom Wrapper End -->
+                    
+                </div>
+            </div>
+        </div><!-- Header Bottom End -->
+        
+    </div><!-- Header Section End -->
+    
+       
+    <!-- Page Banner Section Start-->
+    <div class="page-banner-section section" style="background-image: url(img/bg/page-banner.jpg)">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Page Title Start -->
+                <div class="page-title text-center col">
+                    <h1>contact us</h1>
+                </div><!-- Page Title End -->
+                
+            </div>
+        </div>
+    </div><!-- Page Banner Section End-->
+    
+       
+    <!-- Contact Section Start-->
+    <div class="contact-section section bg-white pt-120">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-xl-10 col-12 ml-auto mr-auto">
+                    
+                    <div class="contact-wrapper">
+                        <div class="row">
+
+                            <div class="contact-info col-lg-5 col-12">
+                                <h4 class="title">Contact Info</h4>
+                                <p>It is a long established fact that readewill be distracted by the readable content of a page when looking at ilayout.</p>
+                                <ul>
+                                    <li><span>Address:</span>House 09,Road 3,Dhaka</li>
+                                    <li><span>Email:</span>christ@email.com</li>
+                                    <li><span>Phone:</span>+99 854 785 65</li>
+                                </ul>
+                                <div class="contact-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                            <div class="contact-form col-lg-7 col-12">
+                                <h4 class="title">Send Your Massage</h4>
+                                <form id="contact-form" action="https://demo.hasthemes.com/christ-preview/christ/mail.php" method="post">
+                                    <input type="text" name="name" placeholder="Your Name">
+                                    <input type="email" name="email" placeholder="Your Email">
+                                    <textarea name="message" placeholder="Your Message"></textarea>
+                                    <input type="submit" value="Submit">
+                                </form>
+                                <p class="form-messege"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </div>
+        </div>
+    </div><!-- Contact Section End-->
+    
+    <!-- Contact Map -->
+    <div id="contact-map"></div>
+
+
+    <?php
+    require_once('Footer.php');
+    ?>
+
+    
+
+</div><!-- Main Wrapper End -->
+
+
+</body>
+<?php
+
+    require_once('js-links.php');
+?>
+
+</html>

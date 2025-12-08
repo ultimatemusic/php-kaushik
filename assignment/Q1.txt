@@ -1,0 +1,60 @@
+Question-1.>>Database Migrations and Eloquent ORM
+
+>>> Assignment: Explain the concept of database migrations in Laravel. Discuss
+how Eloquent ORM simplifies database interactions and provide examples of
+CRUD operations.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ANS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+1. What is Database Migration in Laravel?
+
+Database migration is a way to manage and version control the structure of your database in Laravel. 
+Instead of manually creating or altering tables using SQL, migrations allow you to write PHP code that 
+defines how the database should be structured.
+
+Migrations are helpful because:
+
+They provide a way to easily create and modify database tables.
+
+They keep track of changes made to the database schema.
+
+They allow teams to share database changes easily using version control.
+
+You can rollback and reapply changes without manual intervention.
+
+
+
+You create a migration using Artisan commands: >>php artisan make:migration create_products_table
+
+
+This creates a file where you can define the table structure
+
+
+<?PHP
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProductsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->decimal('price', 8, 2);
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('products');
+    }
+}
+
+?>
+
+Run the migration with:php artisan migrate
+

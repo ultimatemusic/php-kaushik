@@ -1,0 +1,86 @@
+CSS can be added to an HTML document in three main ways:
+    Inline CSS
+    Internal (Embedded) CSS
+    External CSS
+
+NOTE : Each method has its use cases, advantages, and disadvantages
+
+1. Inline CSS
+    a) Applies styles directly inside an HTML element using the style attribute
+
+    b)When to Use:
+        Quick fixes or testing.
+        Overriding other styles in specific cases.
+
+    c)Example:
+        <p style="color: red; font-size: 16px;">This is a red paragraph.</p>
+        <button style="background: blue; color: white;">Click Me</button>
+
+2. Internal (Embedded) CSS
+    a)Defines styles inside the <style> tag within the HTML <head>
+
+    b)When to Use:
+        Small projects or single-page websites.
+        When external CSS is unnecessary.
+
+    c)Example:
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <style>
+            p {
+            color: green;
+            font-family: Arial;
+            }
+            button {
+            background: black;
+            color: white;
+            }
+        </style>
+        </head>
+        <body>
+        <p>This paragraph is green.</p>
+        <button>Submit</button>
+        </body>
+        </html>
+
+
+3. External CSS
+
+    a)Links to a separate .css file using the <link> tag.
+
+    b)index.html
+        <html>
+            <head>
+                <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+                <p>This paragraph is styled externally.</p>
+                <button>Click Me</button>
+            </body>
+        </html>
+    b)style.css
+        p {
+            color: purple;
+            font-weight: bold;
+        }
+        button {
+            background: orange;
+            padding: 10px;
+        }    
+
+
+Best Practices
+    ✔ Use External CSS for most projects (best for scalability).
+    ✔ Use Internal CSS for small projects or quick prototypes.
+    ✔ Avoid Inline CSS unless necessary (e.g., dynamic JavaScript changes).
+    
+
+CSS Priority (Cascading Order)
+    If multiple styles conflict:
+        Inline CSS (highest priority)
+        Internal CSS
+        External CSS
+        Browser Default Styles
+
+

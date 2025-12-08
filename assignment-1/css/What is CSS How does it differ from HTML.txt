@@ -1,0 +1,20 @@
+What is CSS?:
+    CSS (Cascading Style Sheets) 
+    is a stylesheet language used to control the presentation and layout of web pages. 
+    It defines how HTML elements should be displayed, including colors, fonts, spacing, 
+    positioning, and responsiveness.
+
+How HTML and CSS Work Together:
+    HTML provides the structure (e.g., a heading, paragraph, or button).
+    CSS enhances the design (e.g., makes the heading red, adds a background, or animates the button).
+
+Why Use CSS Instead of Styling in HTML?:
+    Separation of Concerns – Keeps structure (HTML) and design (CSS) separate for cleaner code.
+    Reusability – One CSS file can style multiple HTML pages.
+    Efficiency – Changes (e.g., font size) apply globally, not per element.
+    Advanced Control – Enables animations, responsive layouts (Flexbox/Grid), and themes.
+
+Conclusion
+    HTML = Skeleton (content & structure).
+    CSS = Skin & clothes (visual styling).
+    Together, they create well-structured, visually appealing websites

@@ -1,0 +1,28 @@
+What is Semantic HTML?
+    1)   
+        Semantic HTML refers to using HTML elements that convey meaning about
+        the structure and content of a webpage, rather than just defining presentation. 
+        These elements describe the purpose of the content, making it more understandable for 
+        both browsers and developers.
+
+Why is Semantic HTML Important?
+    1) Accessibility:
+        Screen readers and assistive technologies rely on semantic markup to interpret and navigate 
+        content properly.
+        Helps users with disabilities understand the page structure.
+    
+    2) SEO (Search Engine Optimization):
+        Search engines prioritize well-structured content, improving rankings.
+        Semantic tags help crawlers identify key sections (e.g., <article> for blog posts).
+    
+    3) Maintainability & Readability:
+        Makes code easier to understand for developers.
+        Encourages consistent structure across projects.
+    
+    4) Future-Proofing:
+        Ensures compatibility with evolving web standards and technologies.
+        Reduces reliance on non-semantic <div> and <span> tags.
+
+    5) Better Styling & Responsiveness:
+        Provides meaningful hooks for CSS and JavaScript.
+        Helps in creating responsive designs by logically grouping content.
